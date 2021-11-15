@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SwitchStyles</string>
+    <string name="label_1">WhatsApp</string>
+    <string name="label_2">Viber</string>
+    <string name="joppa_lysaja">joppa lysaja</string>
+    <string name="normal_text">чтонить написать в листе</string>
+</resources>
