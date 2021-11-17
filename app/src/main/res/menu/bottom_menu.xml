@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+    android:id="@+id/digits"
+    android:icon="@drawable/ic_baseline_games_24"
+    android:title="@string/game"/>
+
+    <item
+    android:id="@+id/nexton"
+    android:icon="@drawable/ic_dvatone_free_breakfast_24"
+        android:title="@string/coffee"/>
+    <item
+        android:id="@+id/treepunkt"
+        android:icon="@drawable/ic_baseline_games_24"
+        android:title="@string/proba"/>
+</menu>

@@ -4,4 +4,10 @@
     <string name="label_2">Viber</string>
     <string name="joppa_lysaja">joppa lysaja</string>
     <string name="normal_text">чтонить написать в листе</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="random">random</string>
+    <string name="game">Game</string>
+    <string name="coffee">Relax</string>
+    <string name="proba">proba</string>
 </resources>
