@@ -2,21 +2,50 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient_animation_list"
     tools:context=".CoffeeFragment">
 
+    <TextView
+        android:id="@+id/txt_example3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/coffee_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:textColor="@color/grey_font"
+        android:shadowColor="@color/text_shadow_white"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:text="@string/reshka"
+        android:shadowRadius="1" />
+
     <ImageView
-        android:id="@+id/coffee_image_view"
-        android:src="@drawable/ic_dvatone_free_breakfast_24"
+        android:id="@+id/revers_image_view"
+        android:src="@drawable/bitkoin_revers"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="150dp"
+        android:layout_height="150dp"/>
+    <ImageView
+        android:id="@+id/coffee_image_view"
+        android:src="@drawable/bitkoin_avers"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="150dp"
+        android:layout_height="150dp"/>
+
     <Button
-        android:text="@string/random"
+        android:id="@+id/coffee_button"
+        android:text="@string/down_money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"

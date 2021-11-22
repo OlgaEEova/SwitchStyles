@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SwitchStyles</string>
+    <string name="app_name">MainOfice</string>
     <string name="label_1">WhatsApp</string>
     <string name="label_2">Viber</string>
     <string name="joppa_lysaja">joppa lysaja</string>
@@ -9,5 +9,7 @@
     <string name="random">random</string>
     <string name="game">Game</string>
     <string name="coffee">Relax</string>
-    <string name="proba">proba</string>
+    <string name="proba">Мой офис</string>
+    <string name="reshka">Решка!</string>
+    <string name="down_money">Бросить монетку</string>
 </resources>

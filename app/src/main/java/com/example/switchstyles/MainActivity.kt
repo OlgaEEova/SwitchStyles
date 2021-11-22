@@ -13,43 +13,20 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 private const val LAST_SELECTED_ITEM="LAST_SELECTED_ITEM"
 private val DIGIT_FRAGMENT = DigitFragment().javaClass.name
 private val COFFEE_FRAGMENT = CoffeeFragment().javaClass.name
-private val TREE_FRAGMENT= ProbaFragment()
+private val RECYCLER_VIEW_FRAGMENT= RecyclerViewFragment().javaClass.name
+private val PROBA_FRAGMENT = ProbaFragment().javaClass.name
+
     // раняя инициализация нижней навигации
 private lateinit var bottomNavigationMenu: BottomNavigationView
 private var digitFragment = DigitFragment()
 private var coffeeFragment = CoffeeFragment()
-private var treeFragment = ProbaFragment()
+private var recyclerViewFragment = RecyclerViewFragment()
+private var probaFragment = ProbaFragment()
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val appsmainList: List<Appsmain> = listOf(
-            Appsmain("Sberbank", "bankapp", "https://sberbank.ru"),
-            Appsmain("Ubrir", "bankapp", "https://ubrr.ru"),
-            Appsmain("Pochtabank", "bankapp", "https://pochtabank.ru"),
-            Appsmain("Promsvjazbank", "bankapp", "https://psbank.ru"),
-            Appsmain("Facebook messenger", "messenger", ""),
-            Appsmain("Telegram", "messenger", ""),
-            Appsmain("Viber", "messenger", ""),
-            Appsmain("WhatsApp", "messenger", ""),
-            Appsmain("Yandex", "browser", ""),
-            Appsmain("Crome", "browser", ""),
-            Appsmain("Microsoft Edge", "browser", ""),
-            Appsmain("Opera", "browser", "")
-        )
-
-        val usersRecyclerView: RecyclerView = findViewById(R.id.users_recycler_view)
-        usersRecyclerView.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        usersRecyclerView.addItemDecoration(
-            DividerItemDecoration(
-                this,
-                DividerItemDecoration.VERTICAL
-            )
-        )
-        usersRecyclerView.adapter = AppsAdapter(appsmainList)
 
         // настройка кликов элекментов по навигации
         bottomNavigationMenu = findViewById(R.id.bottom_navigation)
@@ -58,24 +35,18 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationMenu.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.digits -> {
-                    Toast.makeText(this, "1 пункт меню",
-                        Toast.LENGTH_LONG).show()
                     fragment = savedInstanceState?.let {
                      supportFragmentManager.getFragment(it, DIGIT_FRAGMENT)
                     } ?: digitFragment
                 }
-R.id.treepunkt ->{
-    supportFragmentManager
-        .beginTransaction()
-        .add(R.id.fragment_container, treeFragment)
-        .commit()
-    Toast.makeText(this, "3q пункт меню",
-        Toast.LENGTH_LONG).show()
-}
+
+                R.id.treepunkt ->{
+                    fragment = savedInstanceState?.let {
+                        supportFragmentManager.getFragment(it, RECYCLER_VIEW_FRAGMENT)
+                    } ?: recyclerViewFragment
+                }
 
                 R.id.nexton -> {
-                    Toast.makeText(this, "Привет! Здесь пока ничего нет, но мы работаем над этим!",
-                        Toast.LENGTH_LONG).show()
                     fragment = savedInstanceState?.let {
                         supportFragmentManager.getFragment(it, COFFEE_FRAGMENT)
                     } ?: coffeeFragment
@@ -86,7 +57,7 @@ R.id.treepunkt ->{
         }
         //сохрание состояния выбранного посл.элемента, если не выбрано, то R.id.digits
         bottomNavigationMenu.selectedItemId=
-            savedInstanceState?.getInt(LAST_SELECTED_ITEM) ?: R.id.digits
+            savedInstanceState?.getInt(LAST_SELECTED_ITEM) ?: R.id.treepunkt
     }
 //сохрание состояния последнего нажатого элемента в навигации
     override fun onSaveInstanceState(outState: Bundle) {
@@ -98,10 +69,10 @@ R.id.treepunkt ->{
     //функция замены фрагментов через суппорфрагментманагер
         private fun replaceFragment(fragment: Fragment) {
                 supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.fragment_container,fragment)
-                ?.addToBackStack(null)
-                ?.commit()
+                .beginTransaction()
+                .replace(R.id.fragment_container,fragment)
+               // .addToBackStack(null)
+                .commit()
 
         }
 
